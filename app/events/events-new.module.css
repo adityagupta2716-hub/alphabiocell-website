@@ -1,0 +1,66 @@
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+  padding-top: 15px;
+  overflow-x: visible;
+  overflow-y: visible;
+}
+
+.header {
+  padding-left: 0vw;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.header h2 {
+  color: #1E90FF;
+  font-size: 6rem;
+  margin-bottom: 8px;
+}
+
+.header p {
+  color: #6EC1FF;
+}
+
+.scroll {
+  background-color: #000;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: visible;
+  padding: 15vw 15vw;
+  padding-bottom: 30vw;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  width: 280px;
+  height: 420px;
+  border-radius: 28px;
+  overflow: visible;
+  flex-shrink: 0;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card span {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+}

@@ -1,0 +1,270 @@
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+  padding-top: 15px;
+  overflow-x: visible;
+  overflow-y: visible;
+}
+
+.header {
+  padding-left: 0vw;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.header h2 {
+  color: #1E90FF;
+  font-size: 6rem;
+  margin-bottom: 8px;
+}
+
+.header p {
+  color: #6EC1FF;
+  font-size: 20px;
+}
+
+.scroll {
+  background-color: #000;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: visible;
+  padding: 15vw 15vw;
+  padding-bottom: 30vw;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  width: 280px;
+  height: 420px;
+  border-radius: 28px;
+  overflow: visible;
+  flex-shrink: 0;
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease, filter 0.3s ease,
+              box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px 10px rgba(30, 144, 255, 0.4);
+}
+
+.card:hover {
+  box-shadow:
+    0 0 40px rgba(110,193,255,0.6),
+    0 0 80px rgba(110,193,255,0.35),
+    0 20px 60px rgba(0,0,0,0.7);
+
+  filter: brightness(1.05);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 26px;
+  background: radial-gradient(
+    circle at center,
+    rgba(110,193,255,0.5),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card span {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.eventsPage {
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+  padding: 6vw 4vw;
+}
+
+.eventsHeader {
+  text-align: center;
+  margin-bottom: 4vw;
+}
+
+.eventsHeader h1 {
+  font-size: 4vw;
+  margin-bottom: 1vw;
+}
+
+.eventsHeader p {
+  font-size: 1.2vw;
+  color: #aaa;
+}
+
+.eventsRow {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  perspective: 2000px;
+  margin-top: 4vw;
+}
+
+.eventCard {
+  position: relative;
+  width: 300px;
+  height: 450px;
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.6s ease, filter 0.6s ease, box-shadow 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+/* Base dim effect */
+.eventCard {
+  transform: rotateY(20deg) scale(0.9);
+  filter: brightness(0.6);
+}
+
+/* Center card (3rd item visually centered) */
+.eventCard:nth-child(3) {
+  transform: rotateY(0deg) scale(1);
+  filter: brightness(1);
+  z-index: 5;
+}
+
+/* Left side */
+.eventCard:nth-child(1),
+.eventCard:nth-child(2) {
+  transform: rotateY(25deg) scale(0.9);
+}
+
+/* Right side */
+.eventCard:nth-child(4),
+.eventCard:nth-child(5) {
+  transform: rotateY(-25deg) scale(0.9);
+}
+
+.eventCard:hover {
+  transform: rotateY(0deg) scale(1.05);
+  filter: brightness(1);
+  box-shadow: 0 40px 80px rgba(30,144,255,0.35);
+}
+
+.eventCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.eventOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  display: flex;
+  align-items: flex-end;
+  padding: 2vw;
+}
+
+.eventOverlay h3 {
+  font-size: 1.5vw;
+}
+
+/* Modal */
+
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContainer {
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #0a0a0a;
+  border-radius: 24px;
+  padding: 3vw;
+  position: relative;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modalPoster {
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 2vw;
+}
+
+.modalTitle {
+  font-size: 2.5vw;
+  margin-bottom: 0.5vw;
+  color: #3ea1ff
+}
+
+.modalMeta {
+  color: #6EC1FF;
+  margin-bottom: 2vw;
+}
+
+.modalText {
+  color: #ccc;
+  line-height: 1.8;
+  margin-bottom: 1.5vw;
+}
+
+.modalGallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1vw;
+  margin-top: 2vw;
+}
+
+.modalGallery img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1vw;
+  right: 1vw;
+  background: #1E90FF;
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
