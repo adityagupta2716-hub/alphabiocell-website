@@ -22,50 +22,33 @@ export default function Navbar() {
     { name: "Home",       href: "/" },
     { name: "Events",     href: "/events" },
     { name: "Board",      href: "/board" },
+    { name: "Newsletter", href: "/newsletter" },
     { name: "AlphaForge", href: "/alphaforge" },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
-        scrolled ? "py-3 glass" : "py-4 bg-transparent"
+        scrolled
+          ? "py-3.5 bg-[#05080c]/85 backdrop-blur-lg border-b border-white/5 shadow-[0_4px_20px_rgba(0,0,0,0.4)]"
+          : "py-4.5 bg-transparent"
       }`}
     >
-      {/*
-        ── NAVBAR CONTAINER ──
-        • max-w-[1240px] aligns with all page sections (same as .page-container)
-        • px-6 md:px-12 lg:px-20 = 24/48/80px side padding at each breakpoint
-        • flex items-center justify-between: logos left, nav links right
-        • No inline style hacks — pure flex, no overlapping
-      */}
-      <div className="w-full max-w-[1240px] mx-auto px-6 md:px-12 lg:px-20 flex items-center justify-between">
-
-        {/*
-          ── LOGO GROUP ──
-          • shrink-0 prevents logos from squishing on narrow screens
-          • gap-4 (16px) between ABC logo, divider, VIT logo — clean separation
-          • min-w-0 + overflow-hidden ensures no overflow on small viewports
-        */}
-        <Link href="/" className="flex items-center gap-4 z-50 group shrink-0 min-w-0">
+      <div className="site-container flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-3.5 z-50 group shrink-0 min-w-0">
           <img
             src="/ABCbluelogobbg1(1).png"
             alt="AlphaBioCell Logo"
-            className="h-9 w-auto object-contain shrink-0 drop-shadow-[0_0_8px_rgba(0,242,254,0.4)] transition-transform duration-300 group-hover:scale-105"
+            className="h-8 md:h-9 w-auto object-contain shrink-0 drop-shadow-[0_0_10px_rgba(0,242,254,0.4)] transition-transform duration-300 group-hover:scale-105"
           />
-          {/* Thin vertical divider between the two logos */}
-          <div className="w-px h-7 bg-white/20 shrink-0" aria-hidden="true" />
+          <div className="w-px h-6 bg-white/20 shrink-0" aria-hidden="true" />
           <img
             src="/vit_white(1).png"
             alt="VIT Logo"
-            className="h-9 w-auto object-contain shrink-0 transition-transform duration-300 group-hover:scale-105"
+            className="h-8 md:h-9 w-auto object-contain shrink-0 transition-transform duration-300 group-hover:scale-105"
           />
         </Link>
 
-        {/*
-          ── DESKTOP NAV (≥768px) ──
-          • gap-8 = 32px between each link — breathable but not scattered
-          • whitespace-nowrap prevents any link from wrapping mid-word
-        */}
         <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
@@ -73,13 +56,13 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`relative font-medium text-[13px] tracking-wider uppercase transition-colors duration-300 hover:text-primary whitespace-nowrap ${
-                  isActive ? "text-primary" : "text-slate-300"
+                className={`relative font-semibold text-[13px] tracking-wider uppercase transition-colors duration-300 hover:text-[#00f2fe] whitespace-nowrap ${
+                  isActive ? "text-[#00f2fe]" : "text-slate-300"
                 }`}
               >
                 {link.name}
                 {isActive && (
-                  <span className="absolute -bottom-1.5 left-0 w-full h-[2px] bg-gradient-to-r from-primary to-accent shadow-[0_0_8px_rgba(0,242,254,0.8)] rounded-full" />
+                  <span className="absolute -bottom-1.5 left-0 w-full h-[2px] bg-[#00f2fe] shadow-[0_0_10px_rgba(0,242,254,0.9)] rounded-full" />
                 )}
               </Link>
             );
@@ -88,7 +71,7 @@ export default function Navbar() {
             href="https://docs.google.com/forms/d/e/1FAIpQLSfZiCyqLCCyd-ThH5vw1qhKKrQL7VhG3-HEswG1xjnfbzkNKQ/viewform?usp=publish-editor"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-medium text-[13px] tracking-wider uppercase text-slate-300 hover:text-primary transition-colors duration-300 whitespace-nowrap"
+            className="font-semibold text-[13px] tracking-wider uppercase text-slate-300 hover:text-[#00f2fe] transition-colors duration-300 whitespace-nowrap"
           >
             Upload PDF
           </a>

@@ -15,7 +15,7 @@ export default function Footer() {
         Identical max-w-[1240px] + px-6/px-12/px-20 as navbar, hero, marquee, faculty.
         This ensures every section aligns perfectly when viewed side by side.
       */}
-      <div className="w-full max-w-[1240px] mx-auto px-6 md:px-12 lg:px-20 relative">
+      <div className="site-container relative">
 
         {/* ── MAIN GRID ──
             gap-12 md:gap-16 between columns for premium airy spacing.
@@ -84,7 +84,7 @@ export default function Footer() {
             </h4>
             {/* space-y-4 gives each link enough vertical breathing room */}
             <ul className="space-y-4">
-              {["Home", "Events", "Board", "AlphaForge"].map((item) => (
+              {["Home", "Events", "Board", "Newsletter", "AlphaForge"].map((item) => (
                 <li key={item}>
                   <Link
                     href={item === "Home" ? "/" : `/${item.toLowerCase()}`}

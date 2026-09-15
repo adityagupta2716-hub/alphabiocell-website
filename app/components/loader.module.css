@@ -1,25 +1,87 @@
 .loader {
-  position: fixed; inset: 0;
-  background: #000; z-index: 999;
-  display: flex; align-items: center; justify-content: center;
-  transition: all .7s ease;
+  position: fixed;
+  inset: 0;
+  background: #05080c;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: all;
 }
+
 .loader.hidden {
-  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
   pointer-events: none;
 }
-.loader h1{
-  position:absolute;
-  font-size: clamp(28px,4vw,64px);
-  color: transparent;
-  background: linear-gradient(to right, #1e90ff, #0b2f5a);
-  -webkit-background-clip: text;
-  opacity: 0;
-  animation: load 1s linear 1s both;
-}
-.loader h1:nth-child(2){ animation-delay: 2s; }
-.loader h1:nth-child(3){ animation-delay: 3s; }
 
-@keyframes load {
-  0%{opacity:0}10%{opacity:1}90%{opacity:1}100%{opacity:0}
+/* Centered word container */
+.word {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  text-align: center;
+  width: 100%;
 }
+
+/* Typography matching reference video */
+.word span {
+  font-family: var(--font-outfit, "Outfit", sans-serif);
+  font-size: clamp(22px, 3vw, 36px);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #60a5fa 0%, #3b82f6 40%, #1e40af 85%, #172554 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  user-select: none;
+}
+
+/* 1. Breathe (starts after 0.6s) */
+.word1 {
+  animation: wordAnim 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+}
+
+/* 2. In */
+.word2 {
+  animation: wordAnim 0.85s cubic-bezier(0.16, 1, 0.3, 1) 1.5s forwards;
+}
+
+/* 3. Opportunity */
+.word3 {
+  animation: wordAnim 0.95s cubic-bezier(0.16, 1, 0.3, 1) 2.4s forwards;
+}
+
+
+@keyframes wordAnim {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(4px);
+  }
+  22% {
+    opacity: 1;
+    transform: translateY(0px);
+    filter: blur(0px);
+  }
+  78% {
+    opacity: 1;
+    transform: translateY(0px);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+    filter: blur(3px);
+  }
+}
+
+
+

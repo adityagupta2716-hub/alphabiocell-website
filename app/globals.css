@@ -47,7 +47,7 @@
   --radius: 0.75rem;
 
   /* Modern Bio-Tech Dark Theme Defaults */
-  --background: #0B1015;
+  --background: #05080c;
   /* Deep slate/blue-black */
   --foreground: #F8FAFC;
   --card: #111822;
@@ -162,14 +162,27 @@ body {
   background-clip: text;
 }
 
-/* ── Layout Utilities ──
-   .container caps width at 1300px so content aligns across every section.
-   Overriding Tailwind's default container with our design-system value. */
-.container {
-  max-width: 1300px;
+.container, .site-container {
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container, .site-container {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container, .site-container {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+  }
 }
 
 /* Prevent images from accidentally causing overflow */
