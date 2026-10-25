@@ -23,7 +23,6 @@ export default function Navbar() {
     { name: "Events",     href: "/events" },
     { name: "Board",      href: "/board" },
     { name: "Newsletter", href: "/newsletter" },
-    { name: "AlphaForge", href: "/alphaforge" },
   ];
 
   return (
@@ -67,14 +66,6 @@ export default function Navbar() {
               </Link>
             );
           })}
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfZiCyqLCCyd-ThH5vw1qhKKrQL7VhG3-HEswG1xjnfbzkNKQ/viewform?usp=publish-editor"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-semibold text-[13px] tracking-wider uppercase text-slate-300 hover:text-[#00f2fe] transition-colors duration-300 whitespace-nowrap"
-          >
-            Upload PDF
-          </a>
         </nav>
 
         {/* ── MOBILE HAMBURGER ── */}
@@ -113,18 +104,6 @@ export default function Navbar() {
                 </Link>
               );
             })}
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfZiCyqLCCyd-ThH5vw1qhKKrQL7VhG3-HEswG1xjnfbzkNKQ/viewform?usp=publish-editor"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`text-3xl font-heading font-medium tracking-wider transition-all duration-300 ${
-                open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-              } text-slate-200 hover:text-white`}
-              style={{ transitionDelay: `${navLinks.length * 80 + 80}ms` }}
-              onClick={() => setOpen(false)}
-            >
-              Upload PDF
-            </a>
           </div>
         </div>
       </div>

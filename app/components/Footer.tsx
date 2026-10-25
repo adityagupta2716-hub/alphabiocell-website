@@ -84,7 +84,7 @@ export default function Footer() {
             </h4>
             {/* space-y-4 gives each link enough vertical breathing room */}
             <ul className="space-y-4">
-              {["Home", "Events", "Board", "Newsletter", "AlphaForge"].map((item) => (
+              {["Home", "Events", "Board", "Newsletter"].map((item) => (
                 <li key={item}>
                   <Link
                     href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
@@ -95,17 +95,6 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
-              <li>
-                <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSfZiCyqLCCyd-ThH5vw1qhKKrQL7VhG3-HEswG1xjnfbzkNKQ/viewform?usp=publish-editor"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-400 text-sm hover:text-primary transition-colors flex items-center gap-2 group"
-                >
-                  <span className="w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-3" />
-                  Upload PDF
-                </a>
-              </li>
             </ul>
           </div>
 

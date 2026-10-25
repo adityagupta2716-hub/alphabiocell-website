@@ -26,6 +26,7 @@ export interface NewsletterArticle {
   accentColor: string;
   badgeIcon: string;
   keyTakeaways: string[];
+  coverImage?: string;
   sections: NewsletterSection[];
 }
 
@@ -39,6 +40,7 @@ export const newsletterArticles: NewsletterArticle[] = [
     date: "September 2026",
     readTime: "3 min read",
     wordCount: "536 words",
+    coverImage: "/newsletter/mini-lungs.jpg",
     summary: "What if doctors could test cancer therapies on a living model of a patient's exact tumor before beginning treatment? Discover how 3D lung organoids and Patient-Derived Organoids (PDOs) are transforming drug discovery, targeted therapy against KRAS/EGFR mutations, and viral research.",
     gradient: "from-cyan-500/20 via-blue-500/10 to-transparent",
     accentColor: "#00f2fe",
@@ -109,6 +111,7 @@ export const newsletterArticles: NewsletterArticle[] = [
     date: "Reference Guide",
     readTime: "4 min read",
     wordCount: "Complete Protocol",
+    coverImage: "/newsletter/pcr.jpg",
     summary: "A foundational laboratory reference covering the full workflow from genomic DNA extraction and NanoDrop spectrophotometric quality assessment to thermal cycling parameters, master mix setup, and post-PCR agarose gel analysis.",
     gradient: "from-emerald-500/20 via-teal-500/10 to-transparent",
     accentColor: "#38ef7d",
@@ -192,6 +195,7 @@ export const newsletterArticles: NewsletterArticle[] = [
     date: "Student Feature",
     readTime: "4 min read",
     wordCount: "Feature Article",
+    coverImage: "/newsletter/protein-bioinformatics.jpg",
     summary: "Protein bioinformatics sits at the vibrant intersection of biology, computer science, and statistics. Learn how computational modeling, UniProt/PDB databases, PyMOL visualization, Python programming, and AlphaFold are replacing costly wet-lab experiments and redefining protein engineering.",
     gradient: "from-purple-500/20 via-indigo-500/10 to-transparent",
     accentColor: "#a855f7",
@@ -260,6 +264,7 @@ export const newsletterArticles: NewsletterArticle[] = [
     date: "Neuroscience Feature",
     readTime: "3 min read",
     wordCount: "Case Analysis",
+    coverImage: "/newsletter/your-brain-can-kill-you.jpg",
     summary: "In 1957, a terminally ill cancer patient experienced miraculous tumor remission from sterile water, followed by fatal relapse upon reading a debunking report. Explore the neurochemistry of expectation, endogenous opioids, dopamine pathways, and the lethal power of the nocebo effect.",
     gradient: "from-rose-500/20 via-amber-500/10 to-transparent",
     accentColor: "#f43f5e",
@@ -325,6 +330,7 @@ export const newsletterArticles: NewsletterArticle[] = [
     date: "Behavioral Health",
     readTime: "3 min read",
     wordCount: "Research Feature",
+    coverImage: "/newsletter/psychology-of-poor-sleep.jpg",
     summary: "A survey of 674 university students reveals that late-night smartphone scrolling is only a symptom—bedtime procrastination, loneliness, negative rumination, and gendered body image pressures are the real psychological drivers of sleep disturbance.",
     gradient: "from-sky-500/20 via-indigo-500/10 to-transparent",
     accentColor: "#38bdf8",
@@ -383,6 +389,7 @@ export const newsletterArticles: NewsletterArticle[] = [
     date: "Machine Learning Feature",
     readTime: "3 min read",
     wordCount: "Technical Project",
+    coverImage: "/newsletter/ai-in-agriculture.jpg",
     summary: "Can a smartphone diagnose crop infections in seconds? Discover how comparing 5 lightweight CNN architectures across 16,000+ tomato leaf images revealed that a 2.82 MB SqueezeNet model delivers 97% accuracy on low-resource mobile devices.",
     gradient: "from-lime-500/20 via-emerald-500/10 to-transparent",
     accentColor: "#84cc16",
@@ -449,6 +456,7 @@ export const newsletterArticles: NewsletterArticle[] = [
     date: "Genomics Feature",
     readTime: "4 min read",
     wordCount: "Genetics Analysis",
+    coverImage: "/newsletter/have-humans-stopped-evolving.jpg",
     summary: "Has modern medicine and civilization halted human natural selection? Genetic evidence demonstrates that evolution is actively ongoing through lactase persistence, Microcephalin/ASPM brain variants, blue eye pigmentation, Tibetan hypoxia adaptations, and malaria resistance.",
     gradient: "from-amber-500/20 via-orange-500/10 to-transparent",
     accentColor: "#f59e0b",
@@ -513,6 +521,7 @@ export const newsletterArticles: NewsletterArticle[] = [
     date: "Applied Biotechnology",
     readTime: "3 min read",
     wordCount: "Technology Review",
+    coverImage: "/newsletter/chewing-gum.jpg",
     summary: "Nearly 1 billion pieces of gum are chewed daily. Beyond oral hygiene and nicotine cessation (Nicotex), cutting-edge science is transforming chewing gum into smart biosensors that change flavor upon disease detection and virus-trapping matrices to neutralize Influenza and Herpes.",
     gradient: "from-pink-500/20 via-rose-500/10 to-transparent",
     accentColor: "#ec4899",
