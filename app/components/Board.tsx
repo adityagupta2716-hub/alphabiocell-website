@@ -4,7 +4,7 @@ import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { createPortal } from "react-dom";
 import { useOutsideClick } from "../hooks/use-outside-click";
-import { X, Linkedin, Users, Facebook, Twitter, Instagram } from "lucide-react";
+import { X, Users, Facebook, Twitter, Instagram } from "lucide-react";
 
 export function Board() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
@@ -121,19 +121,7 @@ export function Board() {
                         </motion.p>
                       </div>
 
-                      <motion.a
-                        layout
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        href={(active as any)?.ctaLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center h-12 w-12 rounded-full border border-primary/30 bg-primary/10 hover:bg-primary/20 hover:border-primary/50 hover:shadow-[0_0_15px_rgba(0,242,254,0.4)] text-primary shrink-0 transition-all duration-300"
-                        aria-label="Connect on LinkedIn"
-                      >
-                        <Linkedin size={20} />
-                      </motion.a>
+
                     </div>
 
                     <div className="px-8 pb-8 overflow-y-auto hide-scrollbar [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden" style={{ marginTop: "5px", marginLeft: "10px", marginBottom: "10px", marginRight: "10px" }}>

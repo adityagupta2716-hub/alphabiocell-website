@@ -292,7 +292,7 @@ export default function NewsletterFlashcards() {
               {/* Scrollable Reading View — Natural document scrolling with generous spacing */}
               <div className="overflow-y-auto [scrollbar-width:thin] flex-1">
                 {/* ── CENTERED READING COLUMN (780–820px max width for optimal line lengths) ── */}
-                <div className="mx-auto w-full max-w-[820px] px-5 sm:px-8 md:px-10 pt-10 sm:pt-14 pb-16">
+                <div className="mx-auto w-full max-w-[820px] px-5 sm:px-8 md:px-10 pt-10 sm:pt-14 pb-24">
                   
                   {/* ── 1. ARTICLE TITLE & SUBTITLE ── */}
                   <div className="mb-6 space-y-3">
@@ -387,7 +387,7 @@ export default function NewsletterFlashcards() {
                   )}
 
                   {/* ── 6. ARTICLE BODY SECTIONS (SPACIOUS SCIENTIFIC EDITORIAL FORMAT) ── */}
-                  <div className="text-slate-300">
+                  <div className="text-slate-300 space-y-12 py-6">
                     {selectedArticle.sections.map((sec, i) => (
                       <section key={i} className="pt-1">
                         {/* Major Section Heading: 44-56px space above (mt-11 sm:mt-14), 16-22px space below (mb-4 sm:mb-5), neat border without touching text */}

@@ -42,8 +42,8 @@ export default function EventsPage() {
       <div className="relative w-full h-[500px] md:h-[600px] flex items-center overflow-hidden touch-pan-x" style={{ marginTop: "10px", marginBottom: "10px" }}>
         <div
           ref={scrollRef}
-          className="flex gap-4 md:gap-8 overflow-x-auto w-full h-full items-center px-[50vw] hide-scrollbar scroll-smooth relative"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          className="flex gap-4 md:gap-8 overflow-x-auto w-full h-full items-center px-[50vw] scroll-smooth relative [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:bg-white/5 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-thumb]:bg-primary/40 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb:hover]:bg-primary/60"
+          style={{ scrollbarWidth: 'thin', scrollbarColor: 'rgba(0,242,254,0.4) rgba(255,255,255,0.05)' }}
         >
           {duplicatedEvents.map((event, index) => (
             <Card

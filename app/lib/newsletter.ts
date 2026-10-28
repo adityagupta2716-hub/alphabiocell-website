@@ -577,6 +577,7 @@ export const newsletterArticles: NewsletterArticle[] = [
     gradient: "from-red-500/20 via-rose-500/10 to-transparent",
     accentColor: "#ef4444",
     badgeIcon: "Activity",
+      coverImage: "/newsletter/colorectal-cancer-in-young-adults.jpg",
     keyTakeaways: [
       "Early-onset CRC is surging worldwide under age 50; projected to rise sharply across colon and rectal cancers by 2030.",
       "Delayed diagnosis is a primary challenge due to low clinical suspicion in young adults despite symptoms lasting >3 months.",
