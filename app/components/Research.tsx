@@ -156,6 +156,7 @@ const researchCards = researchItems.map((item) => ({
 
 export function Research() {
   const items = researchCards.map((card, index) => (
+    {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
     <Card key={`${card.title}-${index}`} card={card as any} index={index} layout={true} />
   ));
 

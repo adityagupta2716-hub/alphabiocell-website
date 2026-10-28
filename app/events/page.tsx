@@ -67,7 +67,7 @@ export default function EventsPage() {
         <div>
           <h3 className="text-white font-heading font-bold text-lg md:text-xl mb-3">Immersive Hackathons</h3>
           <p className="text-slate-400 text-xs md:text-sm leading-relaxed mx-auto" style={{ marginLeft: "10px", marginRight: "10px", marginTop: "10px" }}>
-            Engage in high-stakes problem solving, ideation challenges, and hands-on workshops tailored to your team's style.
+            Engage in high-stakes problem solving, ideation challenges, and hands-on workshops tailored to your team&apos;s style.
           </p>
         </div>
         <div>
